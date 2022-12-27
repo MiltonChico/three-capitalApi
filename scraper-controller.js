@@ -1,16 +1,16 @@
-const cardanoScrapper = require('./cardano-scrapper');
+const cardanoScrapper = require('./scrapper');
 
 async function scrapeAll(browserInstance){
 	let browser;
 	try{
 		browser = await browserInstance;
-		const scrapedData = {};
-		scrapedData['DATA'] = await cardanoScrapper.scraper(browser);
+		const data = await cardanoScrapper.scraper(browser);
 		console.log('Console logueando desde el controller')
-		return scrapedData
+		console.log(data)
+		return data
 	}
 	catch(err){
-		console.log("Could not resolve the browser instance => ", err);
+		console.log("Could not resolve he browser instance => ", err);
 	}
 }
 
