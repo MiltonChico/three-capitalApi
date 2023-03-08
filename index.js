@@ -8,12 +8,13 @@ app.use(cors());
 app.use(express.json());
 
 //Start the browser and create a browser instance
-let browserInstance = browserObject.startBrowser();
 
 app.get('/results', async(req, res) => {
   try {
+    let browserInstance = browserObject.startBrowser();
     // Pass the browser instance to the scraper controller
     const responseData = await scraperController(browserInstance)
+
     res.json(responseData)
   } catch (err){
     res.status(400).json(err)

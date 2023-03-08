@@ -7,6 +7,7 @@ async function scrapeAll(browserInstance){
 		const data = await cardanoScrapper.scraper(browser);
 		console.log('Console logueando desde el controller')
 		console.log(data)
+
 		return data
 	}
 	catch(err){

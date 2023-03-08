@@ -24,6 +24,7 @@ const scraperObject = {
 			})
 		})
 		return dataToReturn
+
 	}
 }
 
