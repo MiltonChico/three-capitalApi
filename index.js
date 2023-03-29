@@ -4,6 +4,8 @@ const cors = require('cors');
 const browserObject = require('./browser');
 const scraperController = require('./scraper-controller.js');
 
+const file = fs.readFileSync('./19C748B6BEEE0D27CB62562C8F8C2085.txt')
+
 app.use(cors());
 app.use(express.json());
 
@@ -16,11 +18,15 @@ app.get('/results', async(req, res) => {
     // Pass the browser instance to the scraper controller
     const responseData = await scraperController(browserInstance)
     res.json(responseData)
-    
+
   } catch (err){
     res.status(400).json(err)
     console.error(err)
   }
+})
+
+app.get('/.well-known/pki-validation/19C748B6BEEE0D27CB62562C8F8C2085.txt', (req, res) => {
+  res.sendFile('C:\Users\Milton\Desktop\THREE CAPITAL GROUP\three-capitalApi\19C748B6BEEE0D27CB62562C8F8C2085.txt')
 })
 
 app.post("/post", (req, res) => {
