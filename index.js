@@ -17,6 +17,8 @@ var corsOptions = {
 let browserInstance = browserObject.startBrowser();
 
 app.get('/results',cors(corsOptions), async(req, res) => {
+
+  res.set('Access-Control-Allow-Origin', '*');
   try {
     // Pass the browser instance to the scraper controller
     const responseData = await scraperController(browserInstance)
