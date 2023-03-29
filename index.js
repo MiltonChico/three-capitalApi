@@ -26,7 +26,7 @@ app.get('/results', async(req, res) => {
 })
 
 app.get('/.well-known/pki-validation/19C748B6BEEE0D27CB62562C8F8C2085.txt', (req, res) => {
-  res.sendFile('C:\Users\Milton\Desktop\THREE CAPITAL GROUP\three-capitalApi\19C748B6BEEE0D27CB62562C8F8C2085.txt')
+  res.sendFile('/home/ec2-user/three-capitalApi/19C748B6BEEE0D27CB62562C8F8C2085.txt')
 })
 
 app.post("/post", (req, res) => {
