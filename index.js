@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const browserObject = require('./browser');
 const scraperController = require('./scraper-controller.js');
+const fs = require('fs')
 
 const file = fs.readFileSync('./19C748B6BEEE0D27CB62562C8F8C2085.txt')
 
