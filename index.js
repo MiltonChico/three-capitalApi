@@ -5,7 +5,7 @@ const browserObject = require('./browser');
 const scraperController = require('./scraper-controller.js');
 const fs = require('fs')
 
-const file = fs.readFileSync('./19C748B6BEEE0D27CB62562C8F8C2085.txt')
+const file = fs.readFileSync('./E0FC16E161938558393A6E13A9882218.txt')
 
 app.use(cors());
 app.use(express.json());
@@ -26,9 +26,10 @@ app.get('/results', async(req, res) => {
   }
 })
 
-app.get('/.well-known/pki-validation/19C748B6BEEE0D27CB62562C8F8C2085.txt', (req, res) => {
-  res.sendFile('/home/ec2-user/three-capitalApi/19C748B6BEEE0D27CB62562C8F8C2085.txt')
+app.get('/.well-known/pki-validation/', (req, res) => {
+  res.sendFile('/home/ec2-user/three-capitalApi/E0FC16E161938558393A6E13A9882218.txt')
 })
+
 
 app.post("/post", (req, res) => {
     console.log("Connected to React");
